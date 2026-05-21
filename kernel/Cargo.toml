@@ -1,0 +1,16 @@
+[package]
+name = "kernel"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[lib]
+name = "kernel"
+path = "src/lib.rs"
+crate-type = ["rlib", "staticlib"]
+test = false
+bench = false
+
+[profile.release]
+panic = "abort"

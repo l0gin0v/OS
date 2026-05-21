@@ -1,0 +1,24 @@
+[package]
+name = "bootloader"
+version = "0.1.0"
+edition = "2024"
+
+[build-dependencies]
+
+[[bin]]
+name = "bootloader"
+path = "src/stage2.rs"
+test = false
+bench = false
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+opt-level = "z"
+lto = true
+codegen-units = 1
+
+[dependencies]
+kernel = { path = "../kernel" }
